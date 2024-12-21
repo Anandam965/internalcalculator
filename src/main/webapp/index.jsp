@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Enter Marks</h2>
+        <h2>Internal Marks Calculator</h2>
         <form action="evaluateMarks.jsp" method="post">
             <div class="form-group">
                 <label for="aat1">AAT1:</label>
