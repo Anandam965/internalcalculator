@@ -51,6 +51,16 @@
         .btn:hover {
             background: #0056b3;
         }
+        .marks {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -77,14 +87,18 @@
         </form>
         <div>
             <%-- Display calculated internal marks if available --%>
-            <% 
-                String internalMarks = (String) request.getAttribute("internalMarks");
-                if (internalMarks != null) {
-            %>
-                <h3>Total Internal Marks: <%= internalMarks %></h3>
-            <% 
-                }
-            %>
+			            <% 
+			    String internalMarks = (String) request.getAttribute("internalMarks");
+			    if (internalMarks != null) {
+			        double marks = Double.parseDouble(internalMarks); // Use Double to handle decimal numbers
+			        String colorClass = marks >= 15 ? "green" : "red";
+			%>
+			        <h3 class="marks <%= colorClass %>">Total Internal Marks: <%= marks %></h3>
+			<% 
+			    }
+			%>
+            
+            
         </div>
     </div>
 </body>
